@@ -41,13 +41,13 @@ export default async function(): Promise<void> {
      const results1 = toArrayOfLines(stdout1)
       // If we find at least one used RPC port, we can try to send a "stop" command
       if (results1.length !== 0) {
-        const daemonPid = Number(results1[0].split(/\s+/)[1])
+        // const daemonPid = Number(results1[0].split(/\s+/)[1])
 
         try { await rpc.stop() }
         catch(err) { /* We can ignore any error here. */ }
 
         // tslint:disable-next-line:no-require-imports
-        require('tree-kill')(daemonPid, 'SIGKILL')
+        // require('tree-kill')(daemonPid, 'SIGKILL')
       }
     }
 
